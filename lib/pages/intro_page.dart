@@ -1,3 +1,4 @@
+import "package:dailify/components/auth_page.dart";
 import "package:flutter/material.dart";
 import "package:dailify/pages/home.dart";
 
@@ -49,7 +50,7 @@ class IntroPage extends StatelessWidget {
               GestureDetector(
                 onTap: () => Navigator.push(
                   context, MaterialPageRoute(
-                    builder:(context) => HomePage()
+                    builder:(context) => AuthPage()
                   )
                 ),
                 child: Container(

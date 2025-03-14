@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:dailify/components/bottom_nav_bar.dart';
 import 'package:dailify/pages/calendar.dart';
@@ -19,6 +20,10 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+    void signUserOut(){
+    FirebaseAuth.instance.signOut();
   }
 
   final List<Widget> _pages = [
@@ -100,13 +105,16 @@ class _HomePageState extends State<HomePage> {
           
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 25.0),
-                child: ListTile(
-                  leading: Icon(Icons.logout),
-                  title: Text("L O G O U T"),
-                  iconColor: Colors.white,
-                  textColor: Colors.white,
+              GestureDetector(
+                onTap: signUserOut,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 25.0),
+                  child: ListTile(
+                    leading: Icon(Icons.logout),
+                    title: Text("L O G O U T"),
+                    iconColor: Colors.white,
+                    textColor: Colors.white,
+                  ),
                 ),
               ),
             ],

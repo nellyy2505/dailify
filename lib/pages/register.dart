@@ -1,32 +1,49 @@
 import 'package:dailify/components/button.dart';
 import 'package:dailify/components/square_tiles.dart';
 import 'package:dailify/components/textfield.dart';
-import 'package:dailify/pages/forgot_pw_page.dart';
 import 'package:dailify/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class SignupPage extends StatefulWidget {
   final Function()? onTap;
-  const LoginPage({super.key, required this.onTap});
+  const SignupPage({super.key, required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   // controller
   final emailController = TextEditingController();
-
+  final cfPasswordController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void signUserIn()async{
-    //try sign in
+  void signUserUp()async{
+    //try creating the user
     try{
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text, 
-        password: passwordController.text,
-      );
+      // check if password is confirmed
+      if(passwordController.text == cfPasswordController.text){
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text, 
+          password: passwordController.text,
+        );
+      }else{
+        showDialog(
+          context: context, 
+          builder: (context){
+            return AlertDialog(
+              title: Text('Incorrect password confirmation!'),
+              titleTextStyle: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+              ),
+              backgroundColor: Colors.black,
+            );
+          }
+        );
+      }
     } on FirebaseAuthException catch (e){
       if(e.code == 'invalid-credential'){
         showDialog(
@@ -59,25 +76,25 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   // logo
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 25),
                   Image.asset(
                       'lib/images/logo.png',
                       height: 100,
                   ),         
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 25),
                   // welcome back
                   Text(
-                    "Welcome back",
+                    "Create account",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 40,
                     ),
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 25),
                   // username tf
                   MyTextfield(
                     controller: emailController,
-                    hintText: "Username",
+                    hintText: "Email",
                     obscureText: false,
                   ),
                   const SizedBox(height: 20,),
@@ -88,33 +105,20 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: "Password",
                     obscureText: true,
                   ),
-                  const SizedBox(height: 10,),
-              
-                  // forgot pw
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return ForgotPwPage();
-                          })) ;
-                        },
-                        child: const Text(
-                          'Forgot password?',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          )
-                        ),
-                      )
-                    ],
-                  ),
                   const SizedBox(height: 20,),
+              
+                  // confirm password tf
+                  MyTextfield(
+                    controller: cfPasswordController,
+                    hintText: "Confirm Password",
+                    obscureText: true,
+                  ),
+                  const SizedBox(height: 50,),
+              
                   // sign in button
                   MyButton(
-                    onTap: signUserIn,
-                    text: 'Sign In'
+                    onTap: signUserUp,
+                    text: 'Sign Up'
                   ),
                   const SizedBox(height: 50,),
               
@@ -155,20 +159,20 @@ class _LoginPageState extends State<LoginPage> {
                           onTap: () => AuthService().signInWithGoogle(),
                         ),
                   const SizedBox(height: 20,),
-              
+                  
                   // register
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Not a member?',
+                        'Already a member?',
                         style: TextStyle(color: Colors.grey[700]),
                       ),
                       const SizedBox(width: 4),
                       GestureDetector(
                         onTap: widget.onTap,
                         child: const Text(
-                          'Register now',
+                          'Log in now',
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,

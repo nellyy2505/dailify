@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "789723357751",
+    "project_id": "dailify-569ac",
+    "storage_bucket": "dailify-569ac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789723357751:android:e7f17eca2e8cddd096d5b2",
+        "android_client_info": {
+          "package_name": "com.example.dailify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdS492cBJg6C0f6GU8IFtV0oyUHx3SK3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>789723357751-qfuvnn9bbmiub7p7r2n7eeejebfne2vh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.789723357751-qfuvnn9bbmiub7p7r2n7eeejebfne2vh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBtjzLailX_rh6r2OJ0pq1kg6ap3bi7lgo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>789723357751</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nellyy2505.dailify</string>
+	<key>PROJECT_ID</key>
+	<string>dailify-569ac</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dailify-569ac.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:789723357751:ios:f838a5d70fd2eb7e96d5b2</string>
+</dict>
+</plist>

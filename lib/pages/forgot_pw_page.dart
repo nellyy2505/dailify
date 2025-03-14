@@ -1,6 +1,6 @@
+import 'package:dailify/components/auth_page.dart';
 import 'package:dailify/components/button.dart';
 import 'package:dailify/components/textfield.dart';
-import 'package:dailify/pages/login_or_signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -116,9 +116,10 @@ class _ForgotPwPageState extends State<ForgotPwPage> {
                   Center(
                     child: GestureDetector(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return LoginOrSignupPage();
-                        })) ;
+                        Navigator.push(context, MaterialPageRoute(
+                            builder:(context) => AuthPage(), 
+                          )
+                        );
                       },
                       child: const Text(
                         'Back to Login',

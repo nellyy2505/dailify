@@ -1,6 +1,5 @@
 import "package:dailify/components/auth_page.dart";
 import "package:flutter/material.dart";
-import "package:dailify/pages/home.dart";
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});

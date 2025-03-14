@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                   // username tf
                   MyTextfield(
                     controller: emailController,
-                    hintText: "Username",
+                    hintText: "Email",
                     obscureText: false,
                   ),
                   const SizedBox(height: 20,),

@@ -1,7 +1,14 @@
 import "package:flutter/material.dart";
 
 class ChatBox extends StatefulWidget {
-  const ChatBox({super.key});
+  final void Function()? onPressed;
+  final String text;
+  const ChatBox({
+    super.key, 
+    required this.onPressed, 
+    required this.text,
+    }
+  );
 
   @override
   State<ChatBox> createState() => _ChatBoxState();
@@ -28,11 +35,7 @@ class _ChatBoxState extends State<ChatBox> {
       decoration: InputDecoration(
         suffixIcon: IconButton(
           icon: Icon(Icons.send),
-
-          //TODO: Chatbot function
-          onPressed: () {
-
-          },
+          onPressed: widget.onPressed,
         ),
         border: OutlineInputBorder(
           borderRadius: const BorderRadius.all(Radius.circular(50.0)),
@@ -40,7 +43,7 @@ class _ChatBoxState extends State<ChatBox> {
         ),
         filled: true,
         fillColor: Colors.white,
-        hintText: 'Send a message',
+        hintText: widget.text,
         hintStyle: TextStyle(
           color: Colors.grey,
           fontSize: 14,

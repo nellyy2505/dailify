@@ -5,6 +5,7 @@ class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
 
   // This widget is the root of your application.
+  void chatBot(){}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,7 +124,10 @@ class DashboardPage extends StatelessWidget {
               ],
             ),     
             //Chatbox
-            ChatBox(),
+            ChatBox(
+              onPressed: chatBot,
+              text: 'Ask me something',
+            ),
           ]
         ),
       ),

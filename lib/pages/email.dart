@@ -49,7 +49,7 @@ class _EmailPageState extends State<EmailPage> {
                         fontWeight: FontWeight.bold,
                       ),
                     ), 
-                    //TODO Retrieve new email content
+                    //TODO Retrieve new emails' content
                   ),
                   
                   ElevatedButton.icon(
@@ -70,7 +70,7 @@ class _EmailPageState extends State<EmailPage> {
           ),                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
           Container(
             padding: const EdgeInsets.all(25),
-          //generated response
+          //generated response or display spam email alert
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -94,7 +94,8 @@ class _EmailPageState extends State<EmailPage> {
               ],
             ),
           ),
-          //edit response
+
+          //edit response and send response to given email or option to delete spam email
           Padding(
             padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
             child: ResponseBox(),

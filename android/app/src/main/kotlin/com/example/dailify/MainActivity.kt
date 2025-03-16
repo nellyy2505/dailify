@@ -1,4 +1,4 @@
-package com.nellyy2505.dailify
+package com.example.dailify
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,5 +1,6 @@
+import 'package:dailify/pages/gmail_fetch.dart';
+import 'package:dailify/util/chatbox.dart';
 import 'package:flutter/material.dart';
-import 'package:dailify/util/response_box.dart';
 
 class EmailPage extends StatefulWidget {
   const EmailPage({super.key});
@@ -9,6 +10,7 @@ class EmailPage extends StatefulWidget {
 }
 
 class _EmailPageState extends State<EmailPage> {
+  void editResponse(){}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +55,12 @@ class _EmailPageState extends State<EmailPage> {
                   ),
                   
                   ElevatedButton.icon(
-                    onPressed:() {}, //TODO view full email 
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(
+                          builder:(context) => GmailApiScreen(), 
+                        )
+                      );
+                    }, //TODO view full email 
                     label: Text("View full email"),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey[200],
@@ -98,7 +105,7 @@ class _EmailPageState extends State<EmailPage> {
           //edit response and send response to given email or option to delete spam email
           Padding(
             padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
-            child: ResponseBox(),
+            child: ChatBox(onPressed: editResponse, text: 'Edit generated response'),
           )
         ],
       )

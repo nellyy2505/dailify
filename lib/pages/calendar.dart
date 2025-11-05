@@ -70,7 +70,7 @@ class _CalendarPageState extends State<CalendarPage> {
                               margin: const EdgeInsets.symmetric(vertical: 5),
                               padding: const EdgeInsets.all(12),
                               decoration: BoxDecoration(
-                                color: isUser ? Colors.blueAccent : Colors.white,
+                                color: isUser ? Colors.black : Colors.white,
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: Text(
@@ -88,7 +88,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 },
               ),
             ),
-            ChatBox(onSendMessage: _addMessage), // Chat input box always at the bottom
+            ChatBox(onSendMessage: _addMessage, text: 'Say something',), // Chat input box always at the bottom
           ],
         ),
       ),

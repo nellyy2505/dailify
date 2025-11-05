@@ -3,8 +3,9 @@ import 'package:dart_openai/dart_openai.dart';
 
 class ChatBox extends StatefulWidget {
   final Function(String, bool) onSendMessage; // Callback to send messages
+  final String text;
 
-  const ChatBox({super.key, required this.onSendMessage});
+  const ChatBox({super.key, required this.onSendMessage, required this.text});
 
   @override
   State<ChatBox> createState() => _ChatBoxState();
@@ -39,7 +40,7 @@ class _ChatBoxState extends State<ChatBox> {
     try {
       // OpenAI Chat Completion API call
       final response = await OpenAI.instance.chat.create(
-        model: "gpt-3.5-turbo", // You can use "gpt-4" if available
+        model: "gpt-3.5-turbo",
         messages: [
           OpenAIChatCompletionChoiceMessageModel(
             role: OpenAIChatMessageRole.user,
@@ -78,7 +79,7 @@ class _ChatBoxState extends State<ChatBox> {
         ),
         filled: true,
         fillColor: Colors.white,
-        hintText: 'Send a message',
+        hintText: widget.text,
         hintStyle: const TextStyle(
           color: Colors.grey,
           fontSize: 14,

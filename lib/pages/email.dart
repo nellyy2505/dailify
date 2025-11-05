@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import 'package:dailify/services/gmail_api.dart';
 import 'package:dailify/pages/open_gmail.dart';
 import 'package:dailify/util/chatbox.dart';
 import 'package:flutter/material.dart';
 import 'package:dart_openai/dart_openai.dart';
+=======
+import 'package:flutter/material.dart';
+import 'package:dailify/util/response_box.dart';
+>>>>>>> parent of fbff448 (Merge branch 'main' into calendar)
 
 class EmailPage extends StatefulWidget {
   const EmailPage({super.key});
@@ -12,6 +17,7 @@ class EmailPage extends StatefulWidget {
 }
 
 class _EmailPageState extends State<EmailPage> {
+<<<<<<< HEAD
   final List<Map<String, dynamic>> messages = [];
   final ScrollController _scrollController = ScrollController();
   bool isLoading = true;
@@ -172,6 +178,8 @@ class _EmailPageState extends State<EmailPage> {
     }
   }
 
+=======
+>>>>>>> parent of fbff448 (Merge branch 'main' into calendar)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -260,6 +268,7 @@ class _EmailPageState extends State<EmailPage> {
                   ),
                   
                   ElevatedButton.icon(
+<<<<<<< HEAD
                     onPressed: () {
                       Navigator.push(
                         context, 
@@ -270,6 +279,10 @@ class _EmailPageState extends State<EmailPage> {
                     },
                     icon: const Icon(Icons.email, color: Colors.black),
                     label: const Text("View full email"),
+=======
+                    onPressed:() {}, //TODO view full email 
+                    label: Text("View full email"),
+>>>>>>> parent of fbff448 (Merge branch 'main' into calendar)
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey[200],
                       elevation: 0,
@@ -369,6 +382,7 @@ class _EmailPageState extends State<EmailPage> {
           // Edit response and send
           Padding(
             padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
+<<<<<<< HEAD
             child: Column(
               children: [
                 ChatBox(
@@ -397,6 +411,10 @@ class _EmailPageState extends State<EmailPage> {
               ],
             ),
           ),
+=======
+            child: ResponseBox(),
+          )
+>>>>>>> parent of fbff448 (Merge branch 'main' into calendar)
         ],
       ),
     );

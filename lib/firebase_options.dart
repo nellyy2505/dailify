@@ -64,7 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '789723357751',
     projectId: 'dailify-569ac',
     storageBucket: 'dailify-569ac.firebasestorage.app',
-    iosBundleId: 'com.example.dailify',
+    iosBundleId: 'com.nellyy2505.dailify',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -73,7 +73,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '789723357751',
     projectId: 'dailify-569ac',
     storageBucket: 'dailify-569ac.firebasestorage.app',
-    iosBundleId: 'com.example.dailify',
+    iosBundleId: 'com.nellyy2505.dailify',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
